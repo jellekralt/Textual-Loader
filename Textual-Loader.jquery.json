@@ -1,0 +1,39 @@
+{
+    "name": "Textual-Loader",
+    "title": "Textual Loader",
+    "description": "",
+    "keywords": [
+        "loader",
+        "textuals",
+        "periods",
+        "dots",
+        "loading",
+        "widget"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Jelle Kralt",
+        "email": "jelle@jellekralt.nl",
+        "url": "http://www.jellekralt.nl"
+    },
+    "maintainers": [
+        {
+            "name": "Jelle Kralt",
+            "email": "jelle@jellekralt.nl",
+            "url": "http://www.jellekralt.nl"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jellekralt/Textual-Loader/blob/master/MIT-license"
+        }
+    ],
+    "bugs": "https://github.com/jellekralt/Textual-Loader/issues",
+    "homepage": "https://github.com/jellekralt/Textual-Loader",
+    "docs": "https://github.com/jellekralt/Textual-Loader",
+    "download": "https://github.com/jellekralt/Textual-Loader",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
