@@ -1,7 +1,7 @@
 {
     "name": "Textual-Loader",
     "title": "Textual Loader",
-    "description": "",
+    "description": "A plugin that turns HTML text elements into textual loaders",
     "keywords": [
         "loader",
         "textuals",

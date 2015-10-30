@@ -1,7 +1,7 @@
 jQuery Textual Loader
 ==============
 
-*DESCRIPTION*
+A plugin that turns HTML text elements into textual loaders.
 
 
 Features

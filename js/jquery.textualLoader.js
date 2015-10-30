@@ -1,6 +1,6 @@
 /*
  *  Project: jquery.textualLoader.js
- *  Description: A plugin that turns HTML elements into textual loaders
+ *  Description: A plugin that turns HTML text elements into textual loaders
  *  Author: Jelle Kralt (jelle@jellekralt.nl)
  *  License: MIT
  */
@@ -9,6 +9,9 @@
 
     // Default settings
     var defaults = {
+        text: 'Loading',
+        autostart: true,
+        event: 'manual',
         onStart: function(){},
         onStop: function(){},
         classes: {
@@ -21,6 +24,9 @@
     function TextualLoader(element, options) {
         this.element = element; // Selected DOM element
         this.$element = $(element); // Selected jQuery element
+
+        this.originalText = this.$element.text();
+        this.interval;
 
         // Extend the defaults with the passed options
         this.options = $.extend( {}, defaults, options);
@@ -35,25 +41,39 @@
     TextualLoader.prototype.init = function () {
         var o = this;
 
+        if(this.options.autostart && this.options.event === 'manual') {
+            this.start();
+        }
+
+        if(this.options.event !== 'manual') {
+            this.$element.on(this.options.event, function() {
+                o.start();
+            })
+        }
        
     };
-
-    
 
     /*
      * start
      * This function starts the loader
     **/
-    TextualLoader.prototype.start = function(e, oTab, closeCurrent, stopRotation) {
+    TextualLoader.prototype.start = function() {
+        var o = this;
 
+        this.$element.text(this.options.text);
+
+        this.interval = setInterval(function() {
+            var t = o.$element.text();
+            o.$element.text(t+'.');
+        },1000);
     };
 
     /*
      * stop
      * This function stops the loader
     **/
-    TextualLoader.prototype.stop = function(e, oTab) {
-
+    TextualLoader.prototype.stop = function() {
+        this.$element.text(this.originalText);
     };
 
     // Plugin wrapper

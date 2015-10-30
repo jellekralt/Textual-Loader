@@ -11,15 +11,12 @@
 </head>
 <body>
 
-
+    <p>Button demo: <a href="#" class="text-loader">Click here</a></p>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#horizontalTab').responsiveTabs({
-                startCollapsed: 'accordion',
-                collapsible: true,
-                rotate: false,
-                setHash: true
+            $('.text-loader').textualLoader({
+                event: 'click'
             });
         });
     </script>
